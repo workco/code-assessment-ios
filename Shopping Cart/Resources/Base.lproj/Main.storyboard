@@ -1,24 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nFs-x3-iJH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Daily Deals-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-AQ-ZGp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" id="iWH-7v-JOK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iWH-7v-JOK" id="oDI-vE-kfz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-uh-Rd1">
+                                                    <rect key="frame" x="315" y="6" width="79" height="30.5"/>
+                                                    <state key="normal" title="Add to Cart"/>
+                                                    <connections>
+                                                        <action selector="addToCartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7o-z0-xZd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="8I9-uh-Rd1" secondAttribute="trailing" constant="20" id="34V-b8-iUa"/>
+                                                <constraint firstAttribute="bottom" secondItem="8I9-uh-Rd1" secondAttribute="bottom" constant="7.5" id="kGh-sQ-gSO"/>
+                                                <constraint firstItem="8I9-uh-Rd1" firstAttribute="top" secondItem="oDI-vE-kfz" secondAttribute="top" constant="6" id="vmt-Q0-bfb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ByQ-YE-WdB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cNM-Qy-OW1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c6u-AQ-ZGp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0hG-be-H84"/>
+                            <constraint firstItem="c6u-AQ-ZGp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Dp-9q-O2B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c6u-AQ-ZGp" secondAttribute="trailing" id="6HO-6e-Udk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c6u-AQ-ZGp" secondAttribute="bottom" id="7YV-ek-OIw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Daily Deals" id="Aa0-hm-EcV">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="ZdF-ja-ina">
+                            <connections>
+                                <segue destination="RlN-8i-Rth" kind="presentation" id="La4-HJ-a9R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="852.17391304347836" y="126.5625"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="W5E-sx-h3Z">
+            <objects>
+                <viewController id="obo-gi-rEy" customClass="CartViewController" customModule="Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uDZ-Jn-oia">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart is empty!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYe-Nm-Hwd">
+                                <rect key="frame" x="153" y="410.5" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lYe-Nm-Hwd" firstAttribute="centerX" secondItem="uDZ-Jn-oia" secondAttribute="centerX" id="HkD-Lv-A4V"/>
+                            <constraint firstItem="lYe-Nm-Hwd" firstAttribute="centerY" secondItem="uDZ-Jn-oia" secondAttribute="centerY" id="cO4-7h-Goc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D75-ap-csM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IkS-nt-Eir">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ytw-Jv-xmc">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="obo-gi-rEy" id="GoJ-TY-EVR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyT-tw-dt7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2723.1884057971015" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O2l-QO-nqM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nFs-x3-iJH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1gh-vh-spf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yN4-8h-asp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hp6-Yw-2lH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rOa-cE-Puo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RlN-8i-Rth" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ni-vc-WRV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="obo-gi-rEy" kind="relationship" relationship="rootViewController" id="6F4-FB-OrP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0n1-Dr-xgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.0434782608697" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cart" catalog="system" width="64" height="50"/>
+    </resources>
 </document>

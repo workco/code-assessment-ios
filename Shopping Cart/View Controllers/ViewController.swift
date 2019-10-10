@@ -14,7 +14,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Uh-Oh", message: "You need to implement add to cart functionality!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        
+        cell.textLabel?.text = "Product Title"
+        cell.detailTextLabel?.text = "Product Price"
+        
+        return cell
+    }
+}
