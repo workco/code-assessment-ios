@@ -19,27 +19,56 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" id="iWH-7v-JOK">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="50" id="iWH-7v-JOK" customClass="ProductTableViewCell" customModule="Shopping_Cart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iWH-7v-JOK" id="oDI-vE-kfz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-uh-Rd1">
-                                                    <rect key="frame" x="315" y="6" width="79" height="30.5"/>
-                                                    <state key="normal" title="Add to Cart"/>
-                                                    <connections>
-                                                        <action selector="addToCartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7o-z0-xZd"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-ub-6s8">
+                                                    <rect key="frame" x="20" y="6" width="374" height="38"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-11-EMx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="38"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mz-ol-NZS">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-bv-Zh7">
+                                                                    <rect key="frame" x="0.0" y="24.5" width="110" height="13.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-uh-Rd1">
+                                                            <rect key="frame" x="295" y="0.0" width="79" height="38"/>
+                                                            <state key="normal" title="Add to Cart"/>
+                                                            <connections>
+                                                                <action selector="addToCartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7o-z0-xZd"/>
+                                                                <action selector="addToCartButtonTapped:" destination="iWH-7v-JOK" eventType="touchUpInside" id="Uwq-v5-XP3"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="8I9-uh-Rd1" secondAttribute="trailing" constant="20" id="34V-b8-iUa"/>
-                                                <constraint firstAttribute="bottom" secondItem="8I9-uh-Rd1" secondAttribute="bottom" constant="7.5" id="kGh-sQ-gSO"/>
-                                                <constraint firstItem="8I9-uh-Rd1" firstAttribute="top" secondItem="oDI-vE-kfz" secondAttribute="top" constant="6" id="vmt-Q0-bfb"/>
+                                                <constraint firstAttribute="trailing" secondItem="v2D-ub-6s8" secondAttribute="trailing" constant="20" id="cxm-5O-zgf"/>
+                                                <constraint firstItem="v2D-ub-6s8" firstAttribute="top" secondItem="oDI-vE-kfz" secondAttribute="top" constant="6" id="mQC-X9-vh9"/>
+                                                <constraint firstAttribute="bottom" secondItem="v2D-ub-6s8" secondAttribute="bottom" constant="6" id="q3l-Xb-kTD"/>
+                                                <constraint firstItem="v2D-ub-6s8" firstAttribute="leading" secondItem="oDI-vE-kfz" secondAttribute="leading" constant="20" id="uAY-Yh-Qw4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addToCartButton" destination="8I9-uh-Rd1" id="occ-Dd-K8u"/>
+                                            <outlet property="productNameLabel" destination="5Mz-ol-NZS" id="6jx-GB-Daz"/>
+                                            <outlet property="productPriceLabel" destination="BC8-bv-Zh7" id="dZb-JD-XNt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -64,6 +93,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="c6u-AQ-ZGp" id="TcH-dw-uav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

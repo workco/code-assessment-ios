@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var products: [Product] {
+        return [Product(name: "AirPods", price: "$199", image: nil),
+                Product(name: "iMac Pro", price: "$5999", image: nil),
+                Product(name: " Car", price: "TBD", image: nil)]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,14 +32,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductTableViewCell else {
+            return UITableViewCell()
+        }
         
-        cell.textLabel?.text = "Product Title"
-        cell.detailTextLabel?.text = "Product Price"
+        cell.configure(with: products[indexPath.row])
         
         return cell
     }
