@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="852.17391304347836" y="126.5625"/>
         </scene>
-        <!--Cart View Controller-->
+        <!--Cart-->
         <scene sceneID="W5E-sx-h3Z">
             <objects>
                 <viewController id="obo-gi-rEy" customClass="CartViewController" customModule="Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,16 +109,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T51-Uf-Sq8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T51-Uf-Sq8">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="XHd-OA-WNj">
                                     <rect key="frame" x="0.0" y="99.5" width="414" height="179"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="N9V-yG-vjS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddedItemCell" id="N9V-yG-vjS">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N9V-yG-vjS" id="gxJ-fc-o05">
@@ -142,7 +142,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D75-ap-csM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IkS-nt-Eir">
+                    <navigationItem key="navigationItem" title="Cart" id="IkS-nt-Eir">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ytw-Jv-xmc">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="obo-gi-rEy" id="GoJ-TY-EVR"/>
