@@ -8,19 +8,25 @@
 
 import UIKit
 
+protocol AddToCartButtonDelegate: class {
+    func didTapAddToCartButton(_ tag: Int)
+}
+
 class ProductTableViewCell: UITableViewCell {
 
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
     
+    weak var delegate: AddToCartButtonDelegate?
+    
     func configure(with product: Product) {
         productNameLabel.text = product.name
-        productPriceLabel.text = product.price
+        productPriceLabel.text = "$ \(product.price)"
     }
     
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {
-        print("Product added!")
+        delegate?.didTapAddToCartButton(sender.tag)
     }
     
 }
