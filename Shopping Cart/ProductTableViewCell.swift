@@ -21,11 +21,16 @@ class ProductTableViewCell: UITableViewCell {
     weak var delegate: AddToCartButtonDelegate?
     
     func configure(with product: Product) {
-        productNameLabel.text = product.name
-        productPriceLabel.text = "$ \(product.price)"
+        productNameLabel.text = "\(product.name)"
+        productPriceLabel.text = "$ \(product.price) x\(product.quantity)"
+        
+        if product.quantity == 0 {
+            addToCartButton.isEnabled = false
+            addToCartButton.setTitle("Out of Stock", for: .normal)
+        }
     }
     
-    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
+    @IBAction func addToCartButtonTapped(_ sender: UIButton) {        
         delegate?.didTapAddToCartButton(sender.tag)
     }
     

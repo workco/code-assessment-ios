@@ -12,4 +12,5 @@ struct Product {
     let name: String
     let price: Double
     let image: String?
+    var quantity: Int
 }

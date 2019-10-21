@@ -9,9 +9,9 @@
 import Foundation
 
 protocol Cart {
-    func addToCart()
-    func removeFromCart()
-    func updateQuantity()
+    func didAddItemToCart(_ item: Product)
+    func didRemoveItemFromCart(_ item: Product)
+    func didUpdateQuatityOfItems()
 }
 
 class CartManager {
