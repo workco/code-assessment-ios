@@ -11,6 +11,7 @@
 		80ABF0F02358F56A00123730 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABF0EF2358F56A00123730 /* ProductTableViewCell.swift */; };
 		80ABF0F4235A45A600123730 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABF0F3235A45A600123730 /* CartManager.swift */; };
 		80ABF0F8235A48A200123730 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABF0F7235A48A200123730 /* ProductsViewController.swift */; };
+		80ABF103235E4CE500123730 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABF102235E4CE500123730 /* Cart.swift */; };
 		80DD079C234E7D9F005D2426 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD079B234E7D9F005D2426 /* CartViewController.swift */; };
 		B8010CE6234E258E0022ADA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8010CE5234E258E0022ADA4 /* AppDelegate.swift */; };
 		B8010CE8234E258E0022ADA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8010CE7234E258E0022ADA4 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		80ABF0EF2358F56A00123730 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductTableViewCell.swift; path = "Shopping Cart/ProductTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		80ABF0F3235A45A600123730 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartManager.swift; path = "Shopping Cart/CartManager.swift"; sourceTree = SOURCE_ROOT; };
 		80ABF0F7235A48A200123730 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		80ABF102235E4CE500123730 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		80DD079B234E7D9F005D2426 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B8010CE2234E258E0022ADA4 /* Shopping Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping Cart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8010CE5234E258E0022ADA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		B8010D08234E26780022ADA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				80ABF102235E4CE500123730 /* Cart.swift */,
 				80ABF0ED2358BC6F00123730 /* Product.swift */,
 			);
 			path = Models;
@@ -291,6 +294,7 @@
 				B8010CE6234E258E0022ADA4 /* AppDelegate.swift in Sources */,
 				B8010CE8234E258E0022ADA4 /* SceneDelegate.swift in Sources */,
 				80ABF0F02358F56A00123730 /* ProductTableViewCell.swift in Sources */,
+				80ABF103235E4CE500123730 /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

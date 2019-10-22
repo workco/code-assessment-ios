@@ -12,6 +12,7 @@ class ProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var products: [Product]?
+    var cart: Cart = Cart.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +42,15 @@ extension ProductsViewController: UITableViewDataSource {
 
 extension ProductsViewController: AddToCartButtonDelegate {
     func didTapAddToCartButton(_ tag: Int) {
-        updateProductList(with: tag)
+        updateCart(with: tag)
     }
     
-    private func updateProductList(with tag: Int) {
+    private func updateCart(with tag: Int) {
         guard var item = products?[tag] else { return }
         item.quantity -= 1
         products?[tag] = item
+        
+        cart.addToCart(item)
         
         let indexPath = IndexPath(item: tag, section: 0)
         tableView.reloadRows(at: [indexPath], with: .middle)

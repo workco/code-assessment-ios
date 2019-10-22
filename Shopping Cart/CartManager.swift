@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol Cart {
-    func didAddItemToCart(_ item: Product)
-    func didRemoveItemFromCart(_ item: Product)
-    func didUpdateQuatityOfItems()
-}
+//protocol Cart {
+//    func didAddItemToCart(_ item: Product)
+//    func didRemoveItemFromCart(_ item: Product)
+//    func didUpdateQuatityOfItems()
+//}
 
 class CartManager {
     

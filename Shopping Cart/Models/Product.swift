@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product: Equatable {
+struct Product {
     let name: String
     let price: Double
     let image: String?
