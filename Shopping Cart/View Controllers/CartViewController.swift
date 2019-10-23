@@ -5,7 +5,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
     
-    let cart: Cart = Cart.shared
+    private let cart: Cart = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +20,12 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func checkoutButtonTapped(_ sender: UIButton) {
         cart.items.removeAll()
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -38,6 +38,7 @@ extension CartViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") else {
             return UITableViewCell()
         }
+        
         let item = cart.items[indexPath.row]
         
         cell.textLabel?.text = item.name

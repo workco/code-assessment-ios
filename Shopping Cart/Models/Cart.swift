@@ -2,7 +2,8 @@ import Foundation
 
 class Cart {
     static let shared = Cart()
-    var items: [Product] = []
+    
+    private(set) var items: [Product] = []
     
     func addToCart(_ product: Product) {
         items.append(product)
