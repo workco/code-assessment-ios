@@ -23,4 +23,9 @@ class Cart {
     func updateCart(with item: Product) {
         item.quantity += 1
     }
+    
+    func totalCost() -> Double {
+        let total = items.map({ $0.subtotal }).reduce(0, +)
+        return round(100.0 * total) / 100.0
+    }
 }

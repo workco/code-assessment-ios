@@ -113,33 +113,34 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="XHd-OA-WNj">
-                                    <rect key="frame" x="0.0" y="111.5" width="414" height="35"/>
+                                    <rect key="frame" x="0.0" y="111.5" width="414" height="105"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Krf-Mc-gtS">
-                                            <rect key="frame" x="20" y="8" width="374" height="19"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-8C-Aly">
+                                            <rect key="frame" x="20" y="30.5" width="374" height="66.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e91-zn-VKS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="172.5" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e91-zn-VKS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nw4-x2-VzB">
-                                                    <rect key="frame" x="182.5" y="0.0" width="191.5" height="19"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-Bv-KyO">
+                                                    <rect key="frame" x="0.0" y="30.5" width="374" height="36"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <state key="normal" title="Checkout"/>
+                                                    <connections>
+                                                        <action selector="checkoutButtonTapped:" destination="obo-gi-rEy" eventType="touchUpInside" id="kMh-dc-IxR"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Krf-Mc-gtS" secondAttribute="bottom" constant="8" id="6tt-Ig-o7w"/>
-                                        <constraint firstItem="Krf-Mc-gtS" firstAttribute="top" secondItem="XHd-OA-WNj" secondAttribute="top" constant="8" id="B9q-Df-c2k"/>
-                                        <constraint firstItem="Krf-Mc-gtS" firstAttribute="leading" secondItem="XHd-OA-WNj" secondAttribute="leading" constant="20" id="Ntg-e7-8A5"/>
-                                        <constraint firstAttribute="trailing" secondItem="Krf-Mc-gtS" secondAttribute="trailing" constant="20" id="Ta5-Sg-HBq"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ch8-8C-Aly" secondAttribute="bottom" constant="8" id="Eui-n1-gXZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ch8-8C-Aly" secondAttribute="trailing" constant="20" id="Vnx-AB-oj5"/>
+                                        <constraint firstItem="Ch8-8C-Aly" firstAttribute="leading" secondItem="XHd-OA-WNj" secondAttribute="leading" constant="20" id="r7d-pT-2Cc"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -191,7 +192,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="checkoutButton" destination="sKN-Bv-KyO" id="d3G-08-3sz"/>
                         <outlet property="tableView" destination="T51-Uf-Sq8" id="wln-rC-H7H"/>
+                        <outlet property="totalLabel" destination="e91-zn-VKS" id="vcX-B3-wUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyT-tw-dt7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

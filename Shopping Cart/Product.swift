@@ -14,6 +14,9 @@ class Product: Equatable {
     let image: String?
     var stock: Int
     var quantity: Int = 1
+    var subtotal: Double {
+        return price * Double(quantity)
+    }
     
     init(name: String, price: Double, image: String?, stock: Int) {
         self.name = name

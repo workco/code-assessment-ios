@@ -10,14 +10,29 @@ import UIKit
 
 class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var checkoutButton: UIButton!
     
     let cart: Cart = Cart.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if cart.items.isEmpty {
+            checkoutButton.isHidden = true
+            totalLabel.text = "There are no items in your cart."
+            totalLabel.textAlignment = .center
+        } else {
+            totalLabel.text = "Total: $\(cart.totalCost())"
+        }
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func checkoutButtonTapped(_ sender: UIButton) {
+        cart.items.removeAll()
         self.dismiss(animated: true, completion: nil)
     }
 }
