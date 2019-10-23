@@ -1,11 +1,3 @@
-//
-//  ProductsViewController.swift
-//  Shopping Cart
-//
-//  Created by Nick Lee on 10/9/19.
-//  Copyright © 2019 Work & Co. All rights reserved.
-//
-
 import UIKit
 
 class ProductsViewController: UIViewController {

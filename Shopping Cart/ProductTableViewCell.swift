@@ -1,11 +1,3 @@
-//
-//  ProductTableViewCell.swift
-//  Shopping Cart
-//
-//  Created by Vadym Apostolyuk on 10/17/19.
-//  Copyright © 2019 Work & Co. All rights reserved.
-//
-
 import UIKit
 
 protocol AddToCartButtonDelegate: class {
@@ -13,7 +5,6 @@ protocol AddToCartButtonDelegate: class {
 }
 
 class ProductTableViewCell: UITableViewCell {
-
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
@@ -33,5 +24,4 @@ class ProductTableViewCell: UITableViewCell {
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {        
         delegate?.didTapAddToCartButton(sender.tag)
     }
-    
 }

@@ -1,16 +1,7 @@
-//
-//  Shopping_CartTests.swift
-//  Shopping CartTests
-//
-//  Created by Nick Lee on 10/9/19.
-//  Copyright © 2019 Work & Co. All rights reserved.
-//
-
 import XCTest
 @testable import Shopping_Cart
 
 class Shopping_CartTests: XCTestCase {
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -30,5 +21,4 @@ class Shopping_CartTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Shopping Cart
-//
-//  Created by Nick Lee on 10/9/19.
-//  Copyright © 2019 Work & Co. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -20,4 +12,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }
-

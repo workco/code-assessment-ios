@@ -1,11 +1,3 @@
-//
-//  Cart.swift
-//  Shopping Cart
-//
-//  Created by Vadym Apostolyuk on 10/21/19.
-//  Copyright © 2019 Work & Co. All rights reserved.
-//
-
 import Foundation
 
 class Cart {
