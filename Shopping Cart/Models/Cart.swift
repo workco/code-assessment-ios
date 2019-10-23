@@ -9,37 +9,18 @@
 import Foundation
 
 class Cart {
-    
     static let shared = Cart()
-    
-    var cartItems: [Product] = []
+    var items: [Product] = []
     
     func addToCart(_ product: Product) {
-        let filteredItems = cartItems.filter { $0 == product }
-        
-        if var item = filteredItems.first {
-            item.quantity += 1
-        } else {
-            cartItems.append(product)
-        }
+        items.append(product)
     }
     
     func removeFromCart(_ product: Product) {
         
     }
     
-    func updateCart(with product: Product) {
-        if self.contains(product) {
-
-        } else {
-
-        }
-    }
-}
-
-extension Cart {
-    func contains(_ product: Product) -> Bool {
-        let item = cartItems.filter { $0.self == product }
-        return item.first != nil
+    func updateCart(with item: Product) {
+        item.quantity += 1
     }
 }

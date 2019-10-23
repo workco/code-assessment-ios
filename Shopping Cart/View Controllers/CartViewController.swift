@@ -9,8 +9,9 @@
 import UIKit
 
 class CartViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     
-    let manager: CartManager = CartManager.shared
+    let cart: Cart = Cart.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +24,18 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let addedItemCount = manager.cartItems?.count {
-            return addedItemCount
-        } else {
-            return 0
-        }
+        return cart.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") else {
+            return UITableViewCell()
+        }
+        let item = cart.items[indexPath.row]
+        
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = "$\(item.price) Qyt: \(item.quantity)"
+        
+        return cell
     }
 }

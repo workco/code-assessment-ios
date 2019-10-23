@@ -22,9 +22,9 @@ class ProductTableViewCell: UITableViewCell {
     
     func configure(with product: Product) {
         productNameLabel.text = "\(product.name)"
-        productPriceLabel.text = "$ \(product.price) x\(product.quantity)"
+        productPriceLabel.text = "$ \(product.price) x\(product.stock)"
         
-        if product.quantity == 0 {
+        if product.stock == 0 {
             addToCartButton.isEnabled = false
             addToCartButton.setTitle("Out of Stock", for: .normal)
         }

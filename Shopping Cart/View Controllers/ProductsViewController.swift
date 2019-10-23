@@ -16,9 +16,10 @@ class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        products = [Product(name: "AirPods", price: 199.99, image: nil, quantity: 10),
-        Product(name: "iMac Pro", price: 5999.99, image: nil, quantity: 5),
-        Product(name: " Car", price: 99999.99, image: nil, quantity: 2)]
+        
+        products = [Product(name: "AirPods", price: 199.99, image: nil, stock: 10),
+        Product(name: "iMac Pro", price: 5999.99, image: nil, stock: 5),
+        Product(name: " Car", price: 99999.99, image: nil, stock: 2)]
     }
 }
 
@@ -46,12 +47,15 @@ extension ProductsViewController: AddToCartButtonDelegate {
     }
     
     private func updateCart(with tag: Int) {
-        guard var item = products?[tag] else { return }
-        item.quantity -= 1
-        products?[tag] = item
+        products?[tag].stock -= 1
+        guard let product = products?[tag] else { return }
         
-        cart.addToCart(item)
-        
+        if cart.items.contains(product) {
+            cart.updateCart(with: product)
+        } else {
+            cart.addToCart(product)
+        }
+    
         let indexPath = IndexPath(item: tag, section: 0)
         tableView.reloadRows(at: [indexPath], with: .middle)
     }
