@@ -6,8 +6,7 @@ final class Cart {
     private(set) var items: [CartItem] = []
     
     var totalCost: Double {
-        let total = items.map({ $0.subtotal }).reduce(0, +)
-        return round(100.0 * total) / 100.0
+        return items.reduce(0, { $0 + $1.subtotal })
     }
     
     func item(for product: Product) -> CartItem? {
