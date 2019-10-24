@@ -8,6 +8,6 @@ struct Product: Equatable {
     let stock: Int
     
     static func ==(lhs: Product, rhs: Product) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id && lhs.name == rhs.name && lhs.price == rhs.price && lhs.imageURL == rhs.imageURL && lhs.stock == rhs.stock
     }
 }
