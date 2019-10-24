@@ -18,6 +18,7 @@
 		B8010CEF234E258F0022ADA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8010CEE234E258F0022ADA4 /* Assets.xcassets */; };
 		B8010CF2234E258F0022ADA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8010CF0234E258F0022ADA4 /* LaunchScreen.storyboard */; };
 		B8010CFD234E258F0022ADA4 /* Shopping_CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8010CFC234E258F0022ADA4 /* Shopping_CartTests.swift */; };
+		B8A0272123611BA600D1D6C9 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0272023611BA600D1D6C9 /* CartItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		B8010CF8234E258F0022ADA4 /* Shopping CartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopping CartTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8010CFC234E258F0022ADA4 /* Shopping_CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_CartTests.swift; sourceTree = "<group>"; };
 		B8010CFE234E258F0022ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8A0272023611BA600D1D6C9 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				80ABF102235E4CE500123730 /* Cart.swift */,
+				B8A0272023611BA600D1D6C9 /* CartItem.swift */,
 				80ABF0ED2358BC6F00123730 /* Product.swift */,
 			);
 			path = Models;
@@ -286,6 +289,7 @@
 			files = (
 				80DD079C234E7D9F005D2426 /* CartViewController.swift in Sources */,
 				80ABF0F8235A48A200123730 /* ProductsViewController.swift in Sources */,
+				B8A0272123611BA600D1D6C9 /* CartItem.swift in Sources */,
 				80ABF0EE2358BC6F00123730 /* Product.swift in Sources */,
 				B8010CE6234E258E0022ADA4 /* AppDelegate.swift in Sources */,
 				B8010CE8234E258E0022ADA4 /* SceneDelegate.swift in Sources */,

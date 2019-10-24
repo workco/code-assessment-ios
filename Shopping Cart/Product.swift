@@ -1,23 +1,13 @@
 import Foundation
 
-class Product: Equatable {
+struct Product: Equatable {
+    let id: Int
     let name: String
     let price: Double
-    let image: String?
-    var stock: Int
-    var quantity: Int = 1
-    var subtotal: Double {
-        return price * Double(quantity)
-    }
+    let imageURL: URL?
+    let stock: Int
     
-    init(name: String, price: Double, image: String?, stock: Int) {
-        self.name = name
-        self.price = price
-        self.image = image
-        self.stock = stock
-    }
-    
-    static func == (lhs: Product, rhs: Product) -> Bool {
-        return lhs.name == rhs.name && lhs.price == rhs.price && lhs.image == rhs.image && lhs.stock == rhs.stock
+    static func ==(lhs: Product, rhs: Product) -> Bool {
+        return lhs.id == rhs.id
     }
 }

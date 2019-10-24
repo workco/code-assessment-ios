@@ -15,7 +15,7 @@ class CartViewController: UIViewController {
             totalLabel.text = "There are no items in your cart."
             totalLabel.textAlignment = .center
         } else {
-            totalLabel.text = "Total: $\(cart.totalCost())"
+            totalLabel.text = "Total: $\(cart.totalCost)"
         }
     }
     
@@ -24,7 +24,7 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func checkoutButtonTapped(_ sender: UIButton) {
-        cart.items.removeAll()
+        cart.empty()
         dismiss(animated: true, completion: nil)
     }
 }
@@ -41,8 +41,8 @@ extension CartViewController: UITableViewDataSource {
         
         let item = cart.items[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.price) Qyt: \(item.quantity)"
+        cell.textLabel?.text = item.product.name
+        cell.detailTextLabel?.text = "$\(item.product.price) Qyt: \(item.quantity)"
         
         return cell
     }
