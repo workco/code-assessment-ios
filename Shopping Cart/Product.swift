@@ -8,6 +8,6 @@ struct Product: Equatable {
     let stock: Int
     
     static func ==(lhs: Product, rhs: Product) -> Bool {
-        return lhs.id == rhs.id
+        lhs.id == rhs.id
     }
 }

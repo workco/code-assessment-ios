@@ -6,15 +6,15 @@ final class Cart {
     private(set) var items: [CartItem] = []
     
     var totalCost: Double {
-        return items.reduce(0, { $0 + $1.subtotal })
+        items.reduce(0, { $0 + $1.subtotal })
     }
     
     func item(for product: Product) -> CartItem? {
-        return items.first(where: { $0.product == product })
+        items.first(where: { $0.product == product })
     }
     
     func contains(product: Product) -> Bool {
-        return items.contains(where: { $0.product == product })
+        items.contains(where: { $0.product == product })
     }
     
     func add(_ product: Product) {
