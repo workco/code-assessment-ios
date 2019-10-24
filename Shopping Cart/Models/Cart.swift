@@ -18,9 +18,9 @@ final class Cart {
     }
     
     func add(_ product: Product) {
-        if let i = items.firstIndex(where: { $0.product == product }) {
-            let item = items[i]
-            items[i] = item.withQuantity(item.quantity + 1)
+        if let index = items.firstIndex(where: { $0.product == product }) {
+            let item = items[index]
+            items[index] = item.withQuantity(item.quantity + 1)
         }
         else {
             items.append(CartItem(product: product, quantity: 1))
