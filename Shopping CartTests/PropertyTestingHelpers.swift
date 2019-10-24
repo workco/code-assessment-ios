@@ -13,7 +13,7 @@ extension Product : Arbitrary {
 }
 
 extension CartItem : Arbitrary {
-    public static var arbitrary: Gen<CartItem> {
+    public static var arbitrary: Gen<Self> {
         Gen<Self>.compose { c in
             CartItem(product: c.generate(), quantity: c.generate())
         }
