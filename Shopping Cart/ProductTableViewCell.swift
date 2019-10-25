@@ -11,11 +11,31 @@ class ProductTableViewCell: UITableViewCell {
     
     weak var delegate: ProductTableViewCellDelegate?
     
+    private static let quantityFormatter: NumberFormatter = {
+        NumberFormatter()
+    }()
+    
+    private static let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+    
     func configure(with product: Product, cartItem: CartItem?) {
         productNameLabel.text = "\(product.name)"
         
+        var titleComponents: [String] = []
+        
+        if let formattedCurrency = type(of: self).currencyFormatter.string(from: product.price as NSNumber) {
+            titleComponents.append(formattedCurrency)
+        }
+        
         let remainingQuantity = product.stock - (cartItem?.quantity ?? 0)
-        productPriceLabel.text = "$ \(product.price) x\(remainingQuantity)"
+        if let formattedQuantity = type(of: self).quantityFormatter.string(from: remainingQuantity as NSNumber) {
+            titleComponents.append("x" + formattedQuantity)
+        }
+        
+        productPriceLabel.text = titleComponents.joined(separator: " ")
         
         if remainingQuantity <= 0 {
             addToCartButton.isEnabled = false
