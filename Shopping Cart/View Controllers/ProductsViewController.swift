@@ -23,12 +23,13 @@ extension ProductsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductTableViewCell, let product = products?[indexPath.row] else {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductTableViewCell,
+            let product = products?[indexPath.row] else {
+                return UITableViewCell()
         }
         
         let cartItem = cart.item(for: product)
-        cell.configure(withProduct: product, cartItem: cartItem)
+        cell.configure(with: product, cartItem: cartItem)
         cell.delegate = self
         
         return cell

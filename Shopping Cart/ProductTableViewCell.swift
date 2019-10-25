@@ -11,7 +11,7 @@ class ProductTableViewCell: UITableViewCell {
     
     weak var delegate: ProductTableViewCellDelegate?
     
-    func configure(withProduct product: Product, cartItem: CartItem?) {
+    func configure(with product: Product, cartItem: CartItem?) {
         productNameLabel.text = "\(product.name)"
         
         let remainingQuantity = product.stock - (cartItem?.quantity ?? 0)
