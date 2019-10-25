@@ -5,7 +5,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
     
-    let cart: Cart = Cart.shared
+    private let cart: Cart = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,17 +15,17 @@ class CartViewController: UIViewController {
             totalLabel.text = "There are no items in your cart."
             totalLabel.textAlignment = .center
         } else {
-            totalLabel.text = "Total: $\(cart.totalCost())"
+            totalLabel.text = "Total: $\(cart.totalCost)"
         }
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func checkoutButtonTapped(_ sender: UIButton) {
-        cart.items.removeAll()
-        self.dismiss(animated: true, completion: nil)
+        cart.empty()
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -38,10 +38,11 @@ extension CartViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") else {
             return UITableViewCell()
         }
+        
         let item = cart.items[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.price) Qyt: \(item.quantity)"
+        cell.textLabel?.text = item.product.name
+        cell.detailTextLabel?.text = "$\(item.product.price) Qyt: \(item.quantity)"
         
         return cell
     }

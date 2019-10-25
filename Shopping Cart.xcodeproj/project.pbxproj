@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,7 +17,12 @@
 		B8010CED234E258E0022ADA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8010CEB234E258E0022ADA4 /* Main.storyboard */; };
 		B8010CEF234E258F0022ADA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8010CEE234E258F0022ADA4 /* Assets.xcassets */; };
 		B8010CF2234E258F0022ADA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8010CF0234E258F0022ADA4 /* LaunchScreen.storyboard */; };
-		B8010CFD234E258F0022ADA4 /* Shopping_CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8010CFC234E258F0022ADA4 /* Shopping_CartTests.swift */; };
+		B8A0272123611BA600D1D6C9 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0272023611BA600D1D6C9 /* CartItem.swift */; };
+		B8A027232361273500D1D6C9 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A027222361273500D1D6C9 /* CartTests.swift */; };
+		B8A02725236162F400D1D6C9 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A02724236162F400D1D6C9 /* ProductTests.swift */; };
+		B8A027272361641F00D1D6C9 /* CartItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A027262361641F00D1D6C9 /* CartItemTests.swift */; };
+		B8EB16212361E75000C7814D /* SwiftCheck in Frameworks */ = {isa = PBXBuildFile; productRef = B8EB16202361E75000C7814D /* SwiftCheck */; };
+		B8EB162323622AF700C7814D /* PropertyTestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB162223622AF700C7814D /* PropertyTestingHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +49,12 @@
 		B8010CF1234E258F0022ADA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8010CF3234E258F0022ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8010CF8234E258F0022ADA4 /* Shopping CartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopping CartTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8010CFC234E258F0022ADA4 /* Shopping_CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_CartTests.swift; sourceTree = "<group>"; };
 		B8010CFE234E258F0022ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8A0272023611BA600D1D6C9 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		B8A027222361273500D1D6C9 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
+		B8A02724236162F400D1D6C9 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
+		B8A027262361641F00D1D6C9 /* CartItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTests.swift; sourceTree = "<group>"; };
+		B8EB162223622AF700C7814D /* PropertyTestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTestingHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EB16212361E75000C7814D /* SwiftCheck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +113,11 @@
 		B8010CFB234E258F0022ADA4 /* Shopping CartTests */ = {
 			isa = PBXGroup;
 			children = (
-				B8010CFC234E258F0022ADA4 /* Shopping_CartTests.swift */,
 				B8010CFE234E258F0022ADA4 /* Info.plist */,
+				B8EB162223622AF700C7814D /* PropertyTestingHelpers.swift */,
+				B8A02724236162F400D1D6C9 /* ProductTests.swift */,
+				B8A027262361641F00D1D6C9 /* CartItemTests.swift */,
+				B8A027222361273500D1D6C9 /* CartTests.swift */,
 			);
 			path = "Shopping CartTests";
 			sourceTree = "<group>";
@@ -122,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				80ABF102235E4CE500123730 /* Cart.swift */,
+				B8A0272023611BA600D1D6C9 /* CartItem.swift */,
 				80ABF0ED2358BC6F00123730 /* Product.swift */,
 			);
 			path = Models;
@@ -217,6 +231,9 @@
 				B8010CFA234E258F0022ADA4 /* PBXTargetDependency */,
 			);
 			name = "Shopping CartTests";
+			packageProductDependencies = (
+				B8EB16202361E75000C7814D /* SwiftCheck */,
+			);
 			productName = "Shopping CartTests";
 			productReference = B8010CF8234E258F0022ADA4 /* Shopping CartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -249,6 +266,9 @@
 				Base,
 			);
 			mainGroup = B8010CD9234E258E0022ADA4;
+			packageReferences = (
+				B8EB161F2361E75000C7814D /* XCRemoteSwiftPackageReference "SwiftCheck" */,
+			);
 			productRefGroup = B8010CE3234E258E0022ADA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,6 +306,7 @@
 			files = (
 				80DD079C234E7D9F005D2426 /* CartViewController.swift in Sources */,
 				80ABF0F8235A48A200123730 /* ProductsViewController.swift in Sources */,
+				B8A0272123611BA600D1D6C9 /* CartItem.swift in Sources */,
 				80ABF0EE2358BC6F00123730 /* Product.swift in Sources */,
 				B8010CE6234E258E0022ADA4 /* AppDelegate.swift in Sources */,
 				B8010CE8234E258E0022ADA4 /* SceneDelegate.swift in Sources */,
@@ -298,7 +319,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8010CFD234E258F0022ADA4 /* Shopping_CartTests.swift in Sources */,
+				B8A027232361273500D1D6C9 /* CartTests.swift in Sources */,
+				B8EB162323622AF700C7814D /* PropertyTestingHelpers.swift in Sources */,
+				B8A02725236162F400D1D6C9 /* ProductTests.swift in Sources */,
+				B8A027272361641F00D1D6C9 /* CartItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +577,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8EB161F2361E75000C7814D /* XCRemoteSwiftPackageReference "SwiftCheck" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/typelift/SwiftCheck.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8EB16202361E75000C7814D /* SwiftCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8EB161F2361E75000C7814D /* XCRemoteSwiftPackageReference "SwiftCheck" */;
+			productName = SwiftCheck;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8010CDA234E258E0022ADA4 /* Project object */;
 }

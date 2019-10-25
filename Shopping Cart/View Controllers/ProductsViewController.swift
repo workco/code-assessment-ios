@@ -1,17 +1,19 @@
 import UIKit
 
-class ProductsViewController: UIViewController {
+final class ProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var products: [Product]?
-    var cart: Cart = Cart.shared
+    private var products: [Product]?
+    private let cart: Cart = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        products = [Product(name: "AirPods", price: 199.99, image: nil, stock: 10),
-        Product(name: "iMac Pro", price: 5999.99, image: nil, stock: 5),
-        Product(name: " Car", price: 99999.99, image: nil, stock: 2)]
+        products = [
+            Product(id: 0, name: "AirPods", price: 199.99, imageURL: nil, stock: 10),
+            Product(id: 1, name: "iMac Pro", price: 5999.99, imageURL: nil, stock: 5),
+            Product(id: 2, name: " Car", price: 99999.99, imageURL: nil, stock: 2)
+        ]
     }
 }
 
@@ -21,34 +23,25 @@ extension ProductsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductTableViewCell, let item = products?[indexPath.row] else {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductTableViewCell,
+            let product = products?[indexPath.row] else {
+                return UITableViewCell()
         }
         
+        let cartItem = cart.item(for: product)
+        cell.configure(with: product, cartItem: cartItem)
         cell.delegate = self
-        cell.addToCartButton.tag = indexPath.row
-        cell.configure(with: item)
         
         return cell
     }
 }
 
-extension ProductsViewController: AddToCartButtonDelegate {
-    func didTapAddToCartButton(_ tag: Int) {
-        updateCart(with: tag)
-    }
-    
-    private func updateCart(with tag: Int) {
-        products?[tag].stock -= 1
-        guard let product = products?[tag] else { return }
-        
-        if cart.items.contains(product) {
-            cart.updateCart(with: product)
-        } else {
-            cart.addToCart(product)
+extension ProductsViewController: ProductTableViewCellDelegate {
+    func didTapAddToCartButton(cell: ProductTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell), let product = products?[indexPath.row] else {
+            return
         }
-    
-        let indexPath = IndexPath(item: tag, section: 0)
+        cart.add(product)
         tableView.reloadRows(at: [indexPath], with: .middle)
     }
 }
