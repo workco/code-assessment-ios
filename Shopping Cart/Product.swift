@@ -9,9 +9,19 @@ struct Product: Codable {
     let images: [Image]
     
     struct Image: Codable {
+        private static let baseURL = URL(string: "https://work-co-code-assessment.herokuapp.com")!
+        
         let type: Type
-        let src: URL
-    
+        var url: URL {
+            guard src.host == nil else {
+                return src
+            }
+            let output = Image.baseURL.appendingPathComponent(src.relativePath)
+            return output
+        }
+        
+        private let src: URL
+        
         enum `Type`: String, Codable {
             case featured, `default`, other
         }

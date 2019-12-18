@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 final class ProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -27,11 +28,26 @@ extension ProductsViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        let cartItem = cart.item(for: product)
-        cell.configure(with: product, cartItem: cartItem)
+//        let cartItem = cart.item(for: product)
+        
         cell.delegate = self
+        configure(cell: cell, with: product)
         
         return cell
+    }
+    
+//    private static let quantityFormatter: NumberFormatter = {
+//        NumberFormatter()
+//    }()
+//
+    
+    private func configure(cell: ProductTableViewCell, with product: Product) {
+        cell.mainImageView.kf.cancelDownloadTask()
+        cell.mainImageView.image = nil
+        cell.mainImageView.kf.setImage(with: product.images.first?.url)
+        
+        cell.nameLabel.text = product.title
+        cell.priceLabel.text = ProductTableViewCell.currencyFormatter.string(for: product.price.value)
     }
 }
 

@@ -19,6 +19,11 @@
 		B8010CF2234E258F0022ADA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8010CF0234E258F0022ADA4 /* LaunchScreen.storyboard */; };
 		B80E085023C2C3B300FF4D86 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = B80E084F23C2C3B300FF4D86 /* products.json */; };
 		B80E085423C2C50300FF4D86 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E085323C2C50300FF4D86 /* DataService.swift */; };
+		B80E085723C2CFAD00FF4D86 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B80E085623C2CFAD00FF4D86 /* Kingfisher */; };
+		B80E085C23C2D5D500FF4D86 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B80E085923C2D5D500FF4D86 /* Raleway-ExtraBold.ttf */; };
+		B80E085D23C2D5D500FF4D86 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B80E085A23C2D5D500FF4D86 /* Raleway-Regular.ttf */; };
+		B80E085E23C2D5D500FF4D86 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B80E085B23C2D5D500FF4D86 /* Raleway-Bold.ttf */; };
+		B80E086023C2D5DD00FF4D86 /* CormorantGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B80E085F23C2D5DD00FF4D86 /* CormorantGaramond-Regular.ttf */; };
 		B8A0272123611BA600D1D6C9 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0272023611BA600D1D6C9 /* CartItem.swift */; };
 		B8A027232361273500D1D6C9 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A027222361273500D1D6C9 /* CartTests.swift */; };
 		B8A02725236162F400D1D6C9 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A02724236162F400D1D6C9 /* ProductTests.swift */; };
@@ -54,6 +59,10 @@
 		B8010CFE234E258F0022ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B80E084F23C2C3B300FF4D86 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		B80E085323C2C50300FF4D86 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = "Shopping Cart/Models/DataService.swift"; sourceTree = SOURCE_ROOT; };
+		B80E085923C2D5D500FF4D86 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B80E085A23C2D5D500FF4D86 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		B80E085B23C2D5D500FF4D86 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		B80E085F23C2D5DD00FF4D86 /* CormorantGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Regular.ttf"; sourceTree = "<group>"; };
 		B8A0272023611BA600D1D6C9 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		B8A027222361273500D1D6C9 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 		B8A02724236162F400D1D6C9 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
@@ -66,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80E085723C2CFAD00FF4D86 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +188,7 @@
 		B8010D0D234E26AC0022ADA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B80E085823C2D5B200FF4D86 /* Fonts */,
 				B80E084F23C2C3B300FF4D86 /* products.json */,
 				B8010CEE234E258F0022ADA4 /* Assets.xcassets */,
 				B8010CF0234E258F0022ADA4 /* LaunchScreen.storyboard */,
@@ -203,6 +214,17 @@
 			path = "Other Sources";
 			sourceTree = "<group>";
 		};
+		B80E085823C2D5B200FF4D86 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B80E085F23C2D5DD00FF4D86 /* CormorantGaramond-Regular.ttf */,
+				B80E085B23C2D5D500FF4D86 /* Raleway-Bold.ttf */,
+				B80E085923C2D5D500FF4D86 /* Raleway-ExtraBold.ttf */,
+				B80E085A23C2D5D500FF4D86 /* Raleway-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,6 +241,9 @@
 			dependencies = (
 			);
 			name = "Shopping Cart";
+			packageProductDependencies = (
+				B80E085623C2CFAD00FF4D86 /* Kingfisher */,
+			);
 			productName = "Shopping Cart";
 			productReference = B8010CE2234E258E0022ADA4 /* Shopping Cart.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +299,7 @@
 			mainGroup = B8010CD9234E258E0022ADA4;
 			packageReferences = (
 				B8EB161F2361E75000C7814D /* XCRemoteSwiftPackageReference "SwiftCheck" */,
+				B80E085523C2CFAD00FF4D86 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B8010CE3234E258E0022ADA4 /* Products */;
 			projectDirPath = "";
@@ -290,9 +316,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80E085E23C2D5D500FF4D86 /* Raleway-Bold.ttf in Resources */,
 				B8010CF2234E258F0022ADA4 /* LaunchScreen.storyboard in Resources */,
+				B80E085D23C2D5D500FF4D86 /* Raleway-Regular.ttf in Resources */,
+				B80E085C23C2D5D500FF4D86 /* Raleway-ExtraBold.ttf in Resources */,
 				B80E085023C2C3B300FF4D86 /* products.json in Resources */,
 				B8010CEF234E258F0022ADA4 /* Assets.xcassets in Resources */,
+				B80E086023C2D5DD00FF4D86 /* CormorantGaramond-Regular.ttf in Resources */,
 				B8010CED234E258E0022ADA4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +617,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B80E085523C2CFAD00FF4D86 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.0;
+			};
+		};
 		B8EB161F2361E75000C7814D /* XCRemoteSwiftPackageReference "SwiftCheck" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/typelift/SwiftCheck.git";
@@ -598,6 +636,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B80E085623C2CFAD00FF4D86 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B80E085523C2CFAD00FF4D86 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		B8EB16202361E75000C7814D /* SwiftCheck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B8EB161F2361E75000C7814D /* XCRemoteSwiftPackageReference "SwiftCheck" */;

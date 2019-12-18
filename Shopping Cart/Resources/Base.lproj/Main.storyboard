@@ -1,72 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nFs-x3-iJH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nFs-x3-iJH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CormorantGaramond-Regular.ttf">
+            <string>CormorantGaramond-Regular</string>
+        </array>
+        <array key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+        </array>
+        <array key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Daily Deals-->
+        <!--DAILY DEALS-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProductsViewController" customModule="Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-AQ-ZGp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-AQ-ZGp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="50" id="iWH-7v-JOK" customClass="ProductTableViewCell" customModule="Shopping_Cart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ProductCell" rowHeight="600" id="iWH-7v-JOK" customClass="ProductTableViewCell" customModule="Shopping_Cart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="600"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iWH-7v-JOK" id="oDI-vE-kfz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-ub-6s8">
-                                                    <rect key="frame" x="20" y="6" width="374" height="38"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2SL-7a-irG">
+                                                    <rect key="frame" x="30" y="30" width="354" height="540"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-11-EMx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="38"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kff-bn-Uen">
+                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="354"/>
+                                                            <color key="backgroundColor" name="Image Loading Placeholder"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="kff-bn-Uen" secondAttribute="height" multiplier="1:1" id="vab-zW-js4"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-ub-6s8">
+                                                            <rect key="frame" x="0.0" y="369" width="354" height="171"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mz-ol-NZS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="19.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-bv-Zh7">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="110" height="13.5"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-11-EMx">
+                                                                    <rect key="frame" x="0.0" y="63" width="129.5" height="45"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mz-ol-NZS">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="23.5"/>
+                                                                            <fontDescription key="fontDescription" name="CormorantGaramond-Regular" family="Cormorant Garamond" pointSize="20"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-bv-Zh7">
+                                                                            <rect key="frame" x="0.0" y="28.5" width="129.5" height="16.5"/>
+                                                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-uh-Rd1">
+                                                                    <rect key="frame" x="231" y="62.5" width="123" height="46"/>
+                                                                    <color key="backgroundColor" name="Button Background Color"/>
+                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
+                                                                    <inset key="contentEdgeInsets" minX="18" minY="13" maxX="18" maxY="13"/>
+                                                                    <state key="normal" title="Add to Bag">
+                                                                        <color key="titleColor" name="Button Text Color"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="addToCartButtonTapped:" destination="iWH-7v-JOK" eventType="touchUpInside" id="Uwq-v5-XP3"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-uh-Rd1">
-                                                            <rect key="frame" x="295" y="0.0" width="79" height="38"/>
-                                                            <state key="normal" title="Add to Cart"/>
-                                                            <connections>
-                                                                <action selector="addToCartButtonTapped:" destination="iWH-7v-JOK" eventType="touchUpInside" id="Uwq-v5-XP3"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="v2D-ub-6s8" secondAttribute="trailing" constant="20" id="cxm-5O-zgf"/>
-                                                <constraint firstItem="v2D-ub-6s8" firstAttribute="top" secondItem="oDI-vE-kfz" secondAttribute="top" constant="6" id="mQC-X9-vh9"/>
-                                                <constraint firstAttribute="bottom" secondItem="v2D-ub-6s8" secondAttribute="bottom" constant="6" id="q3l-Xb-kTD"/>
-                                                <constraint firstItem="v2D-ub-6s8" firstAttribute="leading" secondItem="oDI-vE-kfz" secondAttribute="leading" constant="20" id="uAY-Yh-Qw4"/>
+                                                <constraint firstItem="2SL-7a-irG" firstAttribute="top" secondItem="oDI-vE-kfz" secondAttribute="top" constant="30" id="0YN-vq-vGN"/>
+                                                <constraint firstItem="2SL-7a-irG" firstAttribute="leading" secondItem="oDI-vE-kfz" secondAttribute="leading" constant="30" id="3Rb-cs-VFR"/>
+                                                <constraint firstAttribute="bottom" secondItem="2SL-7a-irG" secondAttribute="bottom" constant="30" id="5z0-VX-NIz"/>
+                                                <constraint firstAttribute="trailing" secondItem="2SL-7a-irG" secondAttribute="trailing" constant="30" id="kqX-n4-Fa8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addToCartButton" destination="8I9-uh-Rd1" id="occ-Dd-K8u"/>
-                                            <outlet property="productNameLabel" destination="5Mz-ol-NZS" id="6jx-GB-Daz"/>
-                                            <outlet property="productPriceLabel" destination="BC8-bv-Zh7" id="dZb-JD-XNt"/>
+                                            <outlet property="mainImageView" destination="kff-bn-Uen" id="h10-b7-NXc"/>
+                                            <outlet property="nameLabel" destination="5Mz-ol-NZS" id="6jx-GB-Daz"/>
+                                            <outlet property="priceLabel" destination="BC8-bv-Zh7" id="dZb-JD-XNt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -85,8 +116,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Daily Deals" id="Aa0-hm-EcV">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="ZdF-ja-ina">
+                    <navigationItem key="navigationItem" title="DAILY DEALS" id="Aa0-hm-EcV">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Bag" id="ZdF-ja-ina">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="cartButtonTapped:" destination="BYZ-38-t0r" id="Nln-DF-Xdh"/>
                                 <segue destination="RlN-8i-Rth" kind="presentation" identifier="ViewCart" id="snE-uw-jde"/>
@@ -206,9 +238,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nFs-x3-iJH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1gh-vh-spf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1gh-vh-spf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Raleway-ExtraBold" family="Raleway" pointSize="20"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -239,6 +275,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="64" height="50"/>
+        <image name="Bag" width="23" height="23"/>
+        <namedColor name="Button Background Color">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Button Text Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Image Loading Placeholder">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
