@@ -22,15 +22,15 @@ class ProductTableViewCell: UITableViewCell {
     }()
     
     func configure(with product: Product, cartItem: CartItem?) {
-        productNameLabel.text = "\(product.name)"
+        productNameLabel.text = "\(product.title)"
         
         var titleComponents: [String] = []
         
-        if let formattedCurrency = type(of: self).currencyFormatter.string(from: product.price as NSNumber) {
+        if let formattedCurrency = type(of: self).currencyFormatter.string(from: product.price.value as NSNumber) {
             titleComponents.append(formattedCurrency)
         }
         
-        let remainingQuantity = product.stock - (cartItem?.quantity ?? 0)
+        let remainingQuantity = product.inventory - (cartItem?.quantity ?? 0)
         if let formattedQuantity = type(of: self).quantityFormatter.string(from: remainingQuantity as NSNumber) {
             titleComponents.append("x" + formattedQuantity)
         }

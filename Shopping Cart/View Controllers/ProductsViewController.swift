@@ -3,17 +3,16 @@ import UIKit
 final class ProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    private var products: [Product]?
+    private let dataService: DataService = .shared
     private let cart: Cart = .shared
+    private var products: [Product]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        products = dataService.fetchDailyDeals()
         
-        products = [
-            Product(id: 0, name: "AirPods", price: 199.99, imageURL: nil, stock: 10),
-            Product(id: 1, name: "iMac Pro", price: 5999.99, imageURL: nil, stock: 5),
-            Product(id: 2, name: " Car", price: 99999.99, imageURL: nil, stock: 2)
-        ]
+        dump(products)
     }
 }
 

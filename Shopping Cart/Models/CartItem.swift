@@ -5,7 +5,8 @@ struct CartItem {
     let quantity: Int
     
     var subtotal: Double {
-        product.price * Double(quantity)
+        0
+//        product.price * Double(quantity)
     }
     
     func withQuantity(_ newQuantity: Int) -> Self {

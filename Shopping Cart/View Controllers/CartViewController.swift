@@ -41,7 +41,7 @@ extension CartViewController: UITableViewDataSource {
         
         let item = cart.items[indexPath.row]
         
-        cell.textLabel?.text = item.product.name
+//        cell.textLabel?.text = item.product.inventory
         cell.detailTextLabel?.text = "$\(item.product.price) Qyt: \(item.quantity)"
         
         return cell
