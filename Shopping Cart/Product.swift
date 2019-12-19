@@ -1,12 +1,16 @@
 import Foundation
 
-struct Product: Codable {
+struct Product: Codable, Equatable {
     let id: Int
     let title: String
     let description: String
     let price: Price
     let inventory: Int
     let images: [Image]
+    
+    var featuredImage: Image? {
+        images.first(where: { $0.type == .featured })
+    }
     
     struct Image: Codable {
         private static let baseURL = URL(string: "https://work-co-code-assessment.herokuapp.com")!
@@ -36,5 +40,9 @@ struct Product: Codable {
     struct Price: Codable {
         let value: Double
         let currency: String
+    }
+    
+    static func ==(lhs: Product, rhs: Product) -> Bool {
+        lhs.id == rhs.id
     }
 }

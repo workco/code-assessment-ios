@@ -1,26 +1,28 @@
 import UIKit
 
-class CartViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var checkoutButton: UIButton!
+final class CartViewController: UIViewController {
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private var emptyStateView: UIView!
+    @IBOutlet private weak var footerView: UIView!
+    @IBOutlet private weak var totalLabel: UILabel!
+    @IBOutlet private weak var checkoutButton: UIButton!
     
     private let cart: Cart = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateAppearanceForCartState()
+    }
+    
+    private func updateAppearanceForCartState() {
         if cart.items.isEmpty {
-            checkoutButton.isHidden = true
-            totalLabel.text = "There are no items in your cart."
-            totalLabel.textAlignment = .center
-        } else {
-            totalLabel.text = "Total: $\(cart.totalCost)"
+            tableView.backgroundView = emptyStateView
+            footerView.isHidden = true
         }
     }
     
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func checkoutButtonTapped(_ sender: UIButton) {
@@ -35,15 +37,22 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") as? CartItemCell else {
             return UITableViewCell()
         }
         
         let item = cart.items[indexPath.row]
-        
-//        cell.textLabel?.text = item.product.inventory
-        cell.detailTextLabel?.text = "$\(item.product.price) Qyt: \(item.quantity)"
+        configure(cell: cell, with: item)
         
         return cell
+    }
+    
+    func configure(cell: CartItemCell, with item: CartItem) {
+        cell.mainImageView.kf.cancelDownloadTask()
+        cell.mainImageView.image = nil
+        cell.mainImageView.kf.setImage(with: item.product.featuredImage?.url)
+        
+        cell.titleLabel.text = item.product.title
+        cell.priceLabel.text = cell.currencyFormatter.string(for: item.product.price.value)
     }
 }

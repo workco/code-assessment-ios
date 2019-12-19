@@ -2,7 +2,7 @@ import UIKit
 import Kingfisher
 
 final class ProductsViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private let dataService: DataService = .shared
     private let cart: Cart = .shared
@@ -12,8 +12,6 @@ final class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         products = dataService.fetchDailyDeals()
-        
-        dump(products)
     }
 }
 
@@ -28,26 +26,19 @@ extension ProductsViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-//        let cartItem = cart.item(for: product)
-        
         cell.delegate = self
         configure(cell: cell, with: product)
         
         return cell
     }
     
-//    private static let quantityFormatter: NumberFormatter = {
-//        NumberFormatter()
-//    }()
-//
-    
     private func configure(cell: ProductTableViewCell, with product: Product) {
         cell.mainImageView.kf.cancelDownloadTask()
         cell.mainImageView.image = nil
-        cell.mainImageView.kf.setImage(with: product.images.first?.url)
+        cell.mainImageView.kf.setImage(with: product.featuredImage?.url)
         
         cell.nameLabel.text = product.title
-        cell.priceLabel.text = ProductTableViewCell.currencyFormatter.string(for: product.price.value)
+        cell.priceLabel.text = cell.currencyFormatter.string(for: product.price.value)
     }
 }
 
@@ -57,6 +48,6 @@ extension ProductsViewController: ProductTableViewCellDelegate {
             return
         }
         cart.add(product)
-        tableView.reloadRows(at: [indexPath], with: .middle)
+        performSegue(withIdentifier: "ShowCart", sender: self)
     }
 }

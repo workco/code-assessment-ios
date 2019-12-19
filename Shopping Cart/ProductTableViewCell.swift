@@ -1,16 +1,26 @@
 import UIKit
 
+private let sharedCurrencyFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter
+}()
+
+protocol ProductCell {
+    var currencyFormatter: NumberFormatter { get }
+}
+
+extension ProductCell {
+    var currencyFormatter: NumberFormatter {
+        sharedCurrencyFormatter
+    }
+}
+
 protocol ProductTableViewCellDelegate: class {
     func didTapAddToCartButton(cell: ProductTableViewCell)
 }
 
-final class ProductTableViewCell: UITableViewCell {
-    static let currencyFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
-    
+final class ProductTableViewCell: UITableViewCell, ProductCell {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
