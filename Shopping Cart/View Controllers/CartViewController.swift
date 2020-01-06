@@ -4,6 +4,9 @@ final class CartViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private var emptyStateView: UIView!
     @IBOutlet private weak var footerView: UIView!
+    @IBOutlet private weak var subtotalLabel: UILabel!
+    @IBOutlet private weak var taxesLabel: UILabel!
+    @IBOutlet private weak var shippingLabel: UILabel!
     @IBOutlet private weak var totalLabel: UILabel!
     @IBOutlet private weak var checkoutButton: UIButton!
     
@@ -27,7 +30,7 @@ final class CartViewController: UIViewController {
     
     @IBAction func checkoutButtonTapped(_ sender: UIButton) {
         cart.empty()
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -54,5 +57,25 @@ extension CartViewController: UITableViewDataSource {
         
         cell.titleLabel.text = item.product.title
         cell.priceLabel.text = cell.currencyFormatter.string(for: item.product.price.value)
+    }
+}
+
+extension CartViewController: CartItemCellDelegate {
+    func didDecrement(cell: CartItemCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let item = cart.items[indexPath.row]
+        cart.update(product: item.product, withQuantity: item.quantity - 1)
+    }
+    
+    func didIncrement(cell: CartItemCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let item = cart.items[indexPath.row]
+        cart.update(product: item.product, withQuantity: item.quantity + 1)
     }
 }
