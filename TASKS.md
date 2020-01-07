@@ -48,4 +48,4 @@ When navigating to the cart page on certain screen sizes, you will see conflicti
 
 # 6. Create Your Own!
 
-Define and complete your own task 💪. Use this opportunity to show us how you like to set up your React projects and/or demonstrate more of your skills.
+Define and complete your own task 💪. Use this opportunity to show us your expertise in areas not otherwise covered by this assessment :)
