@@ -1,13 +1,14 @@
 import Foundation
 
-struct CartItem {
+struct CartItem: Identifiable {
     let product: Product
     let quantity: Int
     
     var subtotal: Double {
         0
-//        product.price * Double(quantity)
     }
+
+    var id: Int { product.id }
     
     func withQuantity(_ newQuantity: Int) -> Self {
         CartItem(product: product, quantity: newQuantity)

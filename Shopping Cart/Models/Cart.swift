@@ -27,13 +27,9 @@ final class Cart {
         }
     }
     
-    func update(product: Product, withQuantity quantity: Int) {
-        // To be implemented
-    }
+    func update(product: Product, withQuantity quantity: Int) {}
     
-    func remove(_ product: Product) {
-        // To be implemented
-    }
+    func remove(_ product: Product) {}
     
     func empty() {
         items.removeAll()
